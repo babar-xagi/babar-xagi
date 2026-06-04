@@ -20,6 +20,8 @@ I am a Bachelor's student pursuing Data Science at Superior University, Lahore, 
 - CSS
 - Bootstrap
 - SQL
+- Rust
+- Zig
 
 ## Fun Fact
 I'm passionate about leveraging data-driven insights to solve real-world problems and enhance decision-making processes.
