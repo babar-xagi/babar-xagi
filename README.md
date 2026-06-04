@@ -24,6 +24,18 @@ Data Science undergraduate with a Computer Science foundation and hands-on exper
 
 ---
 
+## 📊 GitHub Analytics
+
+<p align="center">
+  <img src="https://github-readme-stats-six-seven.vercel.app/api?username=babar-xagi&show_icons=true&bg_color=030712&title_color=38bdf8&text_color=94a3b8&icon_color=818cf8&hide_border=true" width="48%" alt="Muhammad Babar GitHub Stats" />
+  <img src="https://github-readme-stats-six-seven.vercel.app/api/top-langs/?username=babar-xagi&layout=compact&bg_color=030712&title_color=38bdf8&text_color=94a3b8&icon_color=818cf8&hide_border=true" width="48%" alt="Muhammad Babar Top Languages" />
+</p>
+<p align="center">
+  <img src="https://streak-stats.demolab.com/?user=babar-xagi&theme=dark&hide_border=true&background=030712&ring=38bdf8&fire=38bdf8&currStreakLabel=38bdf8" width="97%" alt="Muhammad Babar Streak Stats" />
+</p>
+
+---
+
 ## 🛠️ Technical Skill Set
 
 | Category | Technologies, Libraries & Tools |
@@ -157,18 +169,6 @@ Data Science undergraduate with a Computer Science foundation and hands-on exper
 
 * **English** — Professional working proficiency
 * **Urdu** — Native proficiency
-
----
-
-## 📊 GitHub Analytics
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=babar-xagi&show_icons=true&theme=transparent&bg_color=070a13&title_color=38bdf8&text_color=94a3b8&icon_color=818cf8&hide_border=true" width="48%" alt="Muhammad Babar GitHub Stats" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=babar-xagi&layout=compact&theme=transparent&bg_color=070a13&title_color=38bdf8&text_color=94a3b8&icon_color=818cf8&hide_border=true" width="48%" alt="Muhammad Babar Top Languages" />
-</p>
-<p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=babar-xagi&theme=dark&hide_border=true&background=070a13&ring=38bdf8&fire=38bdf8&currStreakLabel=38bdf8" width="97%" alt="Muhammad Babar Streak Stats" />
-</p>
 
 ---
 

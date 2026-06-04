@@ -1,191 +1,222 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" width="800" height="300" style="background:#070a13; font-family:'Outfit',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; border-radius: 12px;">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320" width="800" height="320" style="background:#02040a; font-family:'Outfit',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; border-radius: 16px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.8);">
   <defs>
-    <!-- Fonts -->
+    <!-- Fonts Import -->
     <style type="text/css">
       @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&amp;family=Fira+Code:wght@400;500&amp;display=swap');
       
       .title {
         font-family: 'Outfit', sans-serif;
         font-weight: 800;
-        font-size: 42px;
-        fill: url(#title-grad);
-        filter: drop-shadow(0px 0px 8px rgba(56, 189, 248, 0.4));
+        font-size: 44px;
+        fill: url(#text-grad);
+        filter: drop-shadow(0px 0px 10px rgba(56, 189, 248, 0.4));
       }
       
       .subtitle {
         font-family: 'Outfit', sans-serif;
-        font-weight: 400;
-        font-size: 18px;
-        fill: #94a3b8;
-        letter-spacing: 2px;
+        font-weight: 600;
+        font-size: 15px;
+        fill: #818cf8;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+      }
+      
+      .terminal-prompt {
+        font-family: 'Fira Code', monospace;
+        font-size: 13px;
+        fill: #38bdf8;
+        font-weight: bold;
       }
       
       .terminal-text {
         font-family: 'Fira Code', monospace;
-        font-size: 14px;
-        fill: #38bdf8;
+        font-size: 13px;
+        fill: #e2e8f0;
+      }
+
+      /* Core Rotations and Pulses */
+      .spin-slow {
+        transform-origin: 640px 160px;
+        animation: spin 30s linear infinite;
+      }
+      .spin-reverse {
+        transform-origin: 640px 160px;
+        animation: spin-rev 20s linear infinite;
+      }
+      .pulse-slow {
+        animation: pulse 4s ease-in-out infinite;
+      }
+      .glow-pulse {
+        animation: glow 3s ease-in-out infinite alternate;
       }
       
-      .glow-dot {
-        animation: pulse 2s infinite ease-in-out;
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
       }
-      
+      @keyframes spin-rev {
+        0% { transform: rotate(360deg); }
+        100% { transform: rotate(0deg); }
+      }
       @keyframes pulse {
-        0%, 100% { opacity: 0.3; transform: scale(1); }
-        50% { opacity: 0.9; transform: scale(1.2); }
+        0%, 100% { transform: scale(1); opacity: 0.8; }
+        50% { transform: scale(1.05); opacity: 0.95; }
+      }
+      @keyframes glow {
+        0% { filter: drop-shadow(0 0 5px rgba(56,189,248,0.4)) drop-shadow(0 0 15px rgba(99,102,241,0.2)); }
+        100% { filter: drop-shadow(0 0 15px rgba(192,132,252,0.8)) drop-shadow(0 0 30px rgba(56,189,248,0.5)); }
+      }
+
+      /* Tech Badge Hover Effect Simulation */
+      .badge-bg {
+        fill: #0d1117;
+        stroke: #30363d;
+        stroke-width: 1;
+        transition: all 0.3s ease;
       }
       
-      /* Grid movement animation */
-      .grid-bg {
-        stroke: #1e293b;
-        stroke-width: 0.5;
-        stroke-dasharray: 4 4;
-        animation: gridMove 20s linear infinite;
-      }
-      
-      @keyframes gridMove {
-        0% { transform: translateY(0); }
-        100% { transform: translateY(20px); }
-      }
-      
-      /* Typing effect */
-      .typing {
-        overflow: hidden;
-        white-space: nowrap;
-        border-right: 2px solid #38bdf8;
-        animation: typing 6s steps(40, end) infinite, blink .75s step-end infinite;
-      }
-      
-      /* Tech stack icons float */
-      .float-element {
-        animation: float 4s ease-in-out infinite;
-      }
-      .float-element-delayed {
-        animation: float 4s ease-in-out infinite;
-        animation-delay: 2s;
-      }
-      
-      @keyframes float {
-        0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-8px); }
+      /* Subtle background grid */
+      .bg-grid {
+        fill: none;
+        stroke: #161b22;
+        stroke-width: 1;
+        opacity: 0.3;
       }
     </style>
     
-    <!-- Gradients -->
-    <linearGradient id="title-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+    <!-- Premium Gradients -->
+    <linearGradient id="text-grad" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#38bdf8" />
-      <stop offset="50%" stop-color="#818cf8" />
-      <stop offset="100%" stop-color="#c084fc" />
+      <stop offset="40%" stop-color="#818cf8" />
+      <stop offset="80%" stop-color="#c084fc" />
+      <stop offset="100%" stop-color="#fb7185" />
+    </linearGradient>
+
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#030712" />
+      <stop offset="50%" stop-color="#080b18" />
+      <stop offset="100%" stop-color="#02040a" />
     </linearGradient>
     
-    <linearGradient id="circle-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#1e1b4b" stop-opacity="0.6"/>
-      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.8"/>
+    <linearGradient id="orb-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.3"/>
+      <stop offset="50%" stop-color="#6366f1" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#c084fc" stop-opacity="0.3"/>
     </linearGradient>
-    
-    <linearGradient id="border-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.5"/>
-      <stop offset="50%" stop-color="#818cf8" stop-opacity="0.1"/>
-      <stop offset="100%" stop-color="#c084fc" stop-opacity="0.5"/>
-    </linearGradient>
+
+    <radialGradient id="glow-grad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.25"/>
+      <stop offset="50%" stop-color="#818cf8" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#02040a" stop-opacity="0"/>
+    </radialGradient>
   </defs>
 
-  <!-- Background Rect -->
-  <rect width="100%" height="100%" fill="#070a13" rx="12" />
+  <!-- Deep space backdrop -->
+  <rect width="100%" height="100%" fill="url(#bg-grad)" />
   
-  <!-- Subtle Grid Pattern -->
-  <g opacity="0.3">
-    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
-      <path d="M 20 0 L 0 0 0 20" fill="none" class="grid-bg" />
-    </pattern>
-    <rect width="100%" height="100%" fill="url(#grid)" />
-  </g>
-  
-  <!-- Sleek borders -->
-  <rect x="1.5" y="1.5" width="797" height="297" rx="10.5" fill="none" stroke="url(#border-grad)" stroke-width="3" />
-
-  <!-- Cybernetic brain / node structure (Right side graphic) -->
-  <g transform="translate(630, 150)" class="float-element">
-    <!-- Outer glow circles -->
-    <circle cx="0" cy="0" r="100" fill="none" stroke="#38bdf8" stroke-width="1" stroke-dasharray="5 15" opacity="0.2" />
-    <circle cx="0" cy="0" r="80" fill="none" stroke="#818cf8" stroke-width="1.5" stroke-dasharray="40 10" opacity="0.3" />
-    <circle cx="0" cy="0" r="60" fill="url(#circle-grad)" stroke="#c084fc" stroke-width="2" opacity="0.5" />
-    
-    <!-- Central AI Node -->
-    <circle cx="0" cy="0" r="12" fill="#38bdf8" filter="drop-shadow(0 0 8px #38bdf8)" />
-    
-    <!-- Connecting network lines -->
-    <line x1="0" y1="0" x2="-45" y2="-45" stroke="#818cf8" stroke-width="1.5" opacity="0.7" />
-    <line x1="0" y1="0" x2="45" y2="-45" stroke="#818cf8" stroke-width="1.5" opacity="0.7" />
-    <line x1="0" y1="0" x2="-45" y2="45" stroke="#818cf8" stroke-width="1.5" opacity="0.7" />
-    <line x1="0" y1="0" x2="45" y2="45" stroke="#818cf8" stroke-width="1.5" opacity="0.7" />
-    <line x1="0" y1="0" x2="-65" y2="0" stroke="#818cf8" stroke-width="1.5" opacity="0.7" />
-    
-    <!-- Connected Nodes -->
-    <circle cx="-45" cy="-45" r="6" fill="#c084fc" class="glow-dot" style="animation-delay: 0.2s;" />
-    <circle cx="45" cy="-45" r="5" fill="#38bdf8" class="glow-dot" style="animation-delay: 0.5s;" />
-    <circle cx="-45" cy="45" r="7" fill="#818cf8" class="glow-dot" style="animation-delay: 0.8s;" />
-    <circle cx="45" cy="45" r="6" fill="#c084fc" class="glow-dot" style="animation-delay: 1.1s;" />
-    <circle cx="-65" cy="0" r="5" fill="#38bdf8" class="glow-dot" style="animation-delay: 1.4s;" />
-
-    <text x="-45" y="-57" font-size="10" fill="#94a3b8" text-anchor="middle" font-family="'Fira Code', monospace">LLM</text>
-    <text x="45" y="-57" font-size="10" fill="#94a3b8" text-anchor="middle" font-family="'Fira Code', monospace">RAG</text>
-    <text x="-45" y="62" font-size="10" fill="#94a3b8" text-anchor="middle" font-family="'Fira Code', monospace">NLP</text>
-    <text x="45" y="62" font-size="10" fill="#94a3b8" text-anchor="middle" font-family="'Fira Code', monospace">Data Sci</text>
+  <!-- Subtle tech lines grid in background -->
+  <g class="bg-grid">
+    <path d="M 0,40 L 800,40 M 0,80 L 800,80 M 0,120 L 800,120 M 0,160 L 800,160 M 0,200 L 800,200 M 0,240 L 800,240 M 0,280 L 800,280" />
+    <path d="M 100,0 L 100,320 M 200,0 L 200,320 M 300,0 L 300,320 M 400,0 L 400,320 M 500,0 L 500,320 M 600,0 L 600,320 M 700,0 L 700,320" />
   </g>
 
-  <!-- Left Side Content -->
-  <g transform="translate(50, 60)">
-    <!-- Terminal Header Badge -->
-    <rect width="180" height="24" rx="12" fill="#1e293b" opacity="0.6" />
-    <circle cx="15" cy="12" r="4" fill="#ef4444" />
-    <circle cx="27" cy="12" r="4" fill="#eab308" />
-    <circle cx="39" cy="12" r="4" fill="#22c55e" />
-    <text x="55" y="16" font-size="10" font-weight="600" fill="#94a3b8" letter-spacing="1">STUDENT PROFILE</text>
+  <!-- Radial ambient glow behind the main graphic -->
+  <circle cx="640" cy="160" r="200" fill="url(#glow-grad)" />
 
-    <!-- Name -->
-    <text x="0" y="70" class="title">MUHAMMAD BABAR</text>
-    
-    <!-- Subtitle -->
-    <text x="0" y="102" class="subtitle">AI &amp; DATA SCIENCE RESEARCHER</text>
-    
-    <!-- Divider -->
-    <line x1="0" y1="120" x2="350" y2="120" stroke="#1e293b" stroke-width="1.5" />
-    
-    <!-- Command Prompt / Terminal Line -->
-    <g transform="translate(0, 145)">
-      <text x="0" y="0" class="terminal-text" font-weight="500">&gt;</text>
-      <!-- Typing Carousel (switching phrases) -->
-      <text x="18" y="0" font-family="'Fira Code', monospace" font-size="14" fill="#e2e8f0">
-        <animate attributeName="opacity" values="1;0.4;1" dur="4s" repeatCount="indefinite" />
-        Focusing on Practical AI Systems &amp; LLMs
-      </text>
+  <!-- Left Content Panel (Glassmorphic Container representation) -->
+  <g transform="translate(50, 45)">
+    <!-- Active Status Badge -->
+    <g transform="translate(0, 0)">
+      <rect width="145" height="22" rx="11" fill="#0d1527" stroke="#1e293b" stroke-width="1.5" />
+      <circle cx="14" cy="11" r="4.5" fill="#38bdf8" />
+      <circle cx="14" cy="11" r="4.5" fill="#38bdf8" opacity="0.6">
+        <animate attributeName="r" values="4.5;9;4.5" dur="2s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0.6;0;0.6" dur="2s" repeatCount="indefinite" />
+      </circle>
+      <text x="26" y="15" font-size="9.5" font-weight="800" fill="#e2e8f0" letter-spacing="1">MS PROSPECTIVE</text>
     </g>
 
-    <g transform="translate(0, 175)">
-      <text x="0" y="0" class="terminal-text" font-weight="500">&gt;</text>
-      <text x="18" y="0" font-family="'Fira Code', monospace" font-size="13" fill="#94a3b8">
-        Recent: CampusGPT — Agentic Campus ERP System
-      </text>
+    <!-- Name and Focus -->
+    <text x="0" y="62" class="title">MUHAMMAD BABAR</text>
+    <text x="0" y="92" class="subtitle">Artificial Intelligence &amp; Data Science</text>
+    
+    <!-- Minimalist Separator -->
+    <line x1="0" y1="112" x2="430" y2="112" stroke="#1f2937" stroke-width="1.5" />
+    
+    <!-- Code Terminal -->
+    <g transform="translate(0, 138)">
+      <text x="0" y="0" class="terminal-prompt">babar-xagi:~ $</text>
+      <text x="120" y="0" class="terminal-text" fill="#cbd5e1">python -c "import campus_gpt"</text>
+    </g>
+    <g transform="translate(0, 160)">
+      <text x="0" y="0" class="terminal-prompt">&gt;&gt;&gt;</text>
+      <text x="35" y="0" class="terminal-text" fill="#34d399" font-weight="600">Model Initialized Successfully.</text>
+    </g>
+    <g transform="translate(0, 182)">
+      <text x="0" y="0" class="terminal-prompt">&gt;&gt;&gt;</text>
+      <text x="35" y="0" class="terminal-text" fill="#94a3b8">Focus: NLP, RAG Systems, &amp; LLM Unlearning</text>
+    </g>
+
+    <!-- Visual tech tag pills -->
+    <g transform="translate(0, 215)">
+      <!-- Py -->
+      <rect x="0" y="0" width="60" height="20" rx="5" class="badge-bg" />
+      <text x="30" y="13" font-size="10" fill="#38bdf8" text-anchor="middle" font-weight="600">Python</text>
+      
+      <!-- ML -->
+      <rect x="70" y="0" width="115" height="20" rx="5" class="badge-bg" />
+      <text x="127.5" y="13" font-size="10" fill="#818cf8" text-anchor="middle" font-weight="600">Machine Learning</text>
+      
+      <!-- NLP -->
+      <rect x="195" y="0" width="90" height="20" rx="5" class="badge-bg" />
+      <text x="240" y="13" font-size="10" fill="#c084fc" text-anchor="middle" font-weight="600">NLP &amp; LLMs</text>
+      
+      <!-- SQL -->
+      <rect x="295" y="0" width="70" height="20" rx="5" class="badge-bg" />
+      <text x="330" y="13" font-size="10" fill="#fb7185" text-anchor="middle" font-weight="600">Data Sci</text>
+    </g>
+  </g>
+
+  <!-- Right Graphic Panel: Futuristic Generative AI Orb -->
+  <g transform="translate(640, 160)" class="glow-pulse">
+    <!-- Static outer gradient orb structure -->
+    <circle cx="0" cy="0" r="85" fill="url(#orb-grad)" stroke="#1e293b" stroke-width="1.5" />
+    
+    <!-- Slow spinning outer orbital rings with dashes -->
+    <g class="spin-slow">
+      <circle cx="0" cy="0" r="100" fill="none" stroke="#818cf8" stroke-width="1" stroke-dasharray="10 25" opacity="0.5" />
+      <circle cx="0" cy="0" r="75" fill="none" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="80 30" opacity="0.6" />
     </g>
     
-    <!-- Technical tags (pills) -->
-    <g transform="translate(0, 205)">
-      <!-- Python Pill -->
-      <rect x="0" y="0" width="70" height="22" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1"/>
-      <text x="35" y="14" font-size="10" fill="#38bdf8" text-anchor="middle" font-weight="600">Python</text>
-
-      <!-- ML Pill -->
-      <rect x="80" y="0" width="105" height="22" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1"/>
-      <text x="132.5" y="14" font-size="10" fill="#818cf8" text-anchor="middle" font-weight="600">Machine Learning</text>
-
-      <!-- Fullstack Pill -->
-      <rect x="195" y="0" width="95" height="22" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1"/>
-      <text x="242.5" y="14" font-size="10" fill="#c084fc" text-anchor="middle" font-weight="600">Full-Stack Dev</text>
-
-      <!-- NLP Pill -->
-      <rect x="300" y="0" width="55" height="22" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1"/>
-      <text x="327.5" y="14" font-size="10" fill="#38bdf8" text-anchor="middle" font-weight="600">NLP</text>
+    <!-- Reverse spinning orbital rings -->
+    <g class="spin-reverse">
+      <circle cx="0" cy="0" r="90" fill="none" stroke="#c084fc" stroke-width="1.5" stroke-dasharray="40 40" opacity="0.5" />
+      <circle cx="0" cy="0" r="65" fill="none" stroke="#f43f5e" stroke-width="1" stroke-dasharray="5 15" opacity="0.6" />
     </g>
+
+    <!-- Nested Central Glowing Orb -->
+    <circle cx="0" cy="0" r="30" fill="#02040a" stroke="#818cf8" stroke-width="2" />
+    <circle cx="0" cy="0" r="15" fill="#38bdf8" filter="drop-shadow(0 0 8px #38bdf8)" />
+
+    <!-- Connecting floating node network elements -->
+    <g stroke="#e2e8f0" stroke-width="0.8" opacity="0.7">
+      <line x1="0" y1="0" x2="-45" y2="-45" />
+      <line x1="0" y1="0" x2="45" y2="-45" />
+      <line x1="0" y1="0" x2="-55" y2="15" />
+      <line x1="0" y1="0" x2="55" y2="15" />
+    </g>
+    
+    <!-- Floating nodes (circles with labels) -->
+    <circle cx="-45" cy="-45" r="5" fill="#fb7185" filter="drop-shadow(0 0 5px #fb7185)" />
+    <circle cx="45" cy="-45" r="5" fill="#38bdf8" filter="drop-shadow(0 0 5px #38bdf8)" />
+    <circle cx="-55" cy="15" r="6" fill="#c084fc" filter="drop-shadow(0 0 5px #c084fc)" />
+    <circle cx="55" cy="15" r="5" fill="#818cf8" filter="drop-shadow(0 0 5px #818cf8)" />
+
+    <!-- Labels for nodes -->
+    <text x="-45" y="-56" font-size="9.5" fill="#94a3b8" text-anchor="middle" font-family="'Fira Code', monospace" font-weight="600">LLM</text>
+    <text x="45" y="-56" font-size="9.5" fill="#94a3b8" text-anchor="middle" font-family="'Fira Code', monospace" font-weight="600">RAG</text>
+    <text x="-55" y="32" font-size="9.5" fill="#94a3b8" text-anchor="middle" font-family="'Fira Code', monospace" font-weight="600">NLP</text>
+    <text x="55" y="32" font-size="9.5" fill="#94a3b8" text-anchor="middle" font-family="'Fira Code', monospace" font-weight="600">AGI</text>
   </g>
 </svg>
