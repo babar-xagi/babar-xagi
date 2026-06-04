@@ -1,0 +1,191 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" width="800" height="300" style="background:#070a13; font-family:'Outfit',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; border-radius: 12px;">
+  <defs>
+    <!-- Fonts -->
+    <style type="text/css">
+      @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&amp;family=Fira+Code:wght@400;500&amp;display=swap');
+      
+      .title {
+        font-family: 'Outfit', sans-serif;
+        font-weight: 800;
+        font-size: 42px;
+        fill: url(#title-grad);
+        filter: drop-shadow(0px 0px 8px rgba(56, 189, 248, 0.4));
+      }
+      
+      .subtitle {
+        font-family: 'Outfit', sans-serif;
+        font-weight: 400;
+        font-size: 18px;
+        fill: #94a3b8;
+        letter-spacing: 2px;
+      }
+      
+      .terminal-text {
+        font-family: 'Fira Code', monospace;
+        font-size: 14px;
+        fill: #38bdf8;
+      }
+      
+      .glow-dot {
+        animation: pulse 2s infinite ease-in-out;
+      }
+      
+      @keyframes pulse {
+        0%, 100% { opacity: 0.3; transform: scale(1); }
+        50% { opacity: 0.9; transform: scale(1.2); }
+      }
+      
+      /* Grid movement animation */
+      .grid-bg {
+        stroke: #1e293b;
+        stroke-width: 0.5;
+        stroke-dasharray: 4 4;
+        animation: gridMove 20s linear infinite;
+      }
+      
+      @keyframes gridMove {
+        0% { transform: translateY(0); }
+        100% { transform: translateY(20px); }
+      }
+      
+      /* Typing effect */
+      .typing {
+        overflow: hidden;
+        white-space: nowrap;
+        border-right: 2px solid #38bdf8;
+        animation: typing 6s steps(40, end) infinite, blink .75s step-end infinite;
+      }
+      
+      /* Tech stack icons float */
+      .float-element {
+        animation: float 4s ease-in-out infinite;
+      }
+      .float-element-delayed {
+        animation: float 4s ease-in-out infinite;
+        animation-delay: 2s;
+      }
+      
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-8px); }
+      }
+    </style>
+    
+    <!-- Gradients -->
+    <linearGradient id="title-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+    
+    <linearGradient id="circle-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1b4b" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.8"/>
+    </linearGradient>
+    
+    <linearGradient id="border-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.5"/>
+      <stop offset="50%" stop-color="#818cf8" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#c084fc" stop-opacity="0.5"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background Rect -->
+  <rect width="100%" height="100%" fill="#070a13" rx="12" />
+  
+  <!-- Subtle Grid Pattern -->
+  <g opacity="0.3">
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" class="grid-bg" />
+    </pattern>
+    <rect width="100%" height="100%" fill="url(#grid)" />
+  </g>
+  
+  <!-- Sleek borders -->
+  <rect x="1.5" y="1.5" width="797" height="297" rx="10.5" fill="none" stroke="url(#border-grad)" stroke-width="3" />
+
+  <!-- Cybernetic brain / node structure (Right side graphic) -->
+  <g transform="translate(630, 150)" class="float-element">
+    <!-- Outer glow circles -->
+    <circle cx="0" cy="0" r="100" fill="none" stroke="#38bdf8" stroke-width="1" stroke-dasharray="5 15" opacity="0.2" />
+    <circle cx="0" cy="0" r="80" fill="none" stroke="#818cf8" stroke-width="1.5" stroke-dasharray="40 10" opacity="0.3" />
+    <circle cx="0" cy="0" r="60" fill="url(#circle-grad)" stroke="#c084fc" stroke-width="2" opacity="0.5" />
+    
+    <!-- Central AI Node -->
+    <circle cx="0" cy="0" r="12" fill="#38bdf8" filter="drop-shadow(0 0 8px #38bdf8)" />
+    
+    <!-- Connecting network lines -->
+    <line x1="0" y1="0" x2="-45" y2="-45" stroke="#818cf8" stroke-width="1.5" opacity="0.7" />
+    <line x1="0" y1="0" x2="45" y2="-45" stroke="#818cf8" stroke-width="1.5" opacity="0.7" />
+    <line x1="0" y1="0" x2="-45" y2="45" stroke="#818cf8" stroke-width="1.5" opacity="0.7" />
+    <line x1="0" y1="0" x2="45" y2="45" stroke="#818cf8" stroke-width="1.5" opacity="0.7" />
+    <line x1="0" y1="0" x2="-65" y2="0" stroke="#818cf8" stroke-width="1.5" opacity="0.7" />
+    
+    <!-- Connected Nodes -->
+    <circle cx="-45" cy="-45" r="6" fill="#c084fc" class="glow-dot" style="animation-delay: 0.2s;" />
+    <circle cx="45" cy="-45" r="5" fill="#38bdf8" class="glow-dot" style="animation-delay: 0.5s;" />
+    <circle cx="-45" cy="45" r="7" fill="#818cf8" class="glow-dot" style="animation-delay: 0.8s;" />
+    <circle cx="45" cy="45" r="6" fill="#c084fc" class="glow-dot" style="animation-delay: 1.1s;" />
+    <circle cx="-65" cy="0" r="5" fill="#38bdf8" class="glow-dot" style="animation-delay: 1.4s;" />
+
+    <text x="-45" y="-57" font-size="10" fill="#94a3b8" text-anchor="middle" font-family="'Fira Code', monospace">LLM</text>
+    <text x="45" y="-57" font-size="10" fill="#94a3b8" text-anchor="middle" font-family="'Fira Code', monospace">RAG</text>
+    <text x="-45" y="62" font-size="10" fill="#94a3b8" text-anchor="middle" font-family="'Fira Code', monospace">NLP</text>
+    <text x="45" y="62" font-size="10" fill="#94a3b8" text-anchor="middle" font-family="'Fira Code', monospace">Data Sci</text>
+  </g>
+
+  <!-- Left Side Content -->
+  <g transform="translate(50, 60)">
+    <!-- Terminal Header Badge -->
+    <rect width="180" height="24" rx="12" fill="#1e293b" opacity="0.6" />
+    <circle cx="15" cy="12" r="4" fill="#ef4444" />
+    <circle cx="27" cy="12" r="4" fill="#eab308" />
+    <circle cx="39" cy="12" r="4" fill="#22c55e" />
+    <text x="55" y="16" font-size="10" font-weight="600" fill="#94a3b8" letter-spacing="1">STUDENT PROFILE</text>
+
+    <!-- Name -->
+    <text x="0" y="70" class="title">MUHAMMAD BABAR</text>
+    
+    <!-- Subtitle -->
+    <text x="0" y="102" class="subtitle">AI &amp; DATA SCIENCE RESEARCHER</text>
+    
+    <!-- Divider -->
+    <line x1="0" y1="120" x2="350" y2="120" stroke="#1e293b" stroke-width="1.5" />
+    
+    <!-- Command Prompt / Terminal Line -->
+    <g transform="translate(0, 145)">
+      <text x="0" y="0" class="terminal-text" font-weight="500">&gt;</text>
+      <!-- Typing Carousel (switching phrases) -->
+      <text x="18" y="0" font-family="'Fira Code', monospace" font-size="14" fill="#e2e8f0">
+        <animate attributeName="opacity" values="1;0.4;1" dur="4s" repeatCount="indefinite" />
+        Focusing on Practical AI Systems &amp; LLMs
+      </text>
+    </g>
+
+    <g transform="translate(0, 175)">
+      <text x="0" y="0" class="terminal-text" font-weight="500">&gt;</text>
+      <text x="18" y="0" font-family="'Fira Code', monospace" font-size="13" fill="#94a3b8">
+        Recent: CampusGPT — Agentic Campus ERP System
+      </text>
+    </g>
+    
+    <!-- Technical tags (pills) -->
+    <g transform="translate(0, 205)">
+      <!-- Python Pill -->
+      <rect x="0" y="0" width="70" height="22" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+      <text x="35" y="14" font-size="10" fill="#38bdf8" text-anchor="middle" font-weight="600">Python</text>
+
+      <!-- ML Pill -->
+      <rect x="80" y="0" width="105" height="22" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+      <text x="132.5" y="14" font-size="10" fill="#818cf8" text-anchor="middle" font-weight="600">Machine Learning</text>
+
+      <!-- Fullstack Pill -->
+      <rect x="195" y="0" width="95" height="22" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+      <text x="242.5" y="14" font-size="10" fill="#c084fc" text-anchor="middle" font-weight="600">Full-Stack Dev</text>
+
+      <!-- NLP Pill -->
+      <rect x="300" y="0" width="55" height="22" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+      <text x="327.5" y="14" font-size="10" fill="#38bdf8" text-anchor="middle" font-weight="600">NLP</text>
+    </g>
+  </g>
+</svg>
